@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Card from "./pages/test";
 
 const App = () => {
   const [time, setTime] = useState({
@@ -24,21 +25,27 @@ const App = () => {
   }, []);
 
   return (
-    <div className="digital-clock">
-      <div className="time">
-        {String(time.hour).padStart(2, "0")} :{" "}
-        {String(time.minute).padStart(2, "0")} :{" "}
-        {String(time.second).padStart(2, "0")}
+    <>
+      <div className="digital-clock">
+        <div className="time">
+          {String(time.hour).padStart(2, "0")} :{" "}
+          {String(time.minute).padStart(2, "0")} :{" "}
+          {String(time.second).padStart(2, "0")}
+        </div>
+        <div className="date">
+          {new Date().toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </div>
       </div>
-      <div className="date">
-        {new Date().toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
+
+      <div className="grid grid-cols-3">
+        <Card />
       </div>
-    </div>
+    </>
   );
 };
 
