@@ -33,7 +33,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 w-full h-full">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 w-full">
         <div className="p-10 hidden lg:block">
           <img
             src="https://i.postimg.cc/26G0zg4P/pramod-tiwari-jokb6u-SXflc-unsplash.jpg"
@@ -43,12 +43,14 @@ const Login: React.FC = () => {
         </div>
         <div className="items-center space-y-2 p-10">
           <p className="font-semibold text-3xl">Login to</p>
-          <div className=" space-y-3">
+          <p className="text-3xl lg:text-5xl font-bold text-green-400">LumiJobs</p>
+          <div className="pt-5 space-y-3">
             <Link to="/">
-          <p className="text-6xl lg:text-5xl font-bold text-green-400 pb-5">LumiJobs</p>
-             
+              <button className="btn w-full" aria-label="Go to Home">
+                <RiHome2Fill />
+                Home
+              </button>
             </Link>
-            <div className="divider"></div>
             <SocialLogin></SocialLogin>
           </div>
           <div className="divider"></div>
