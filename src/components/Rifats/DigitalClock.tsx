@@ -22,7 +22,7 @@ const DigitalClock = () => {
         return () => clearInterval(intervalId);
       }, []);
   return (
-    <div>
+    <div className="min-h-screen flex items-center justify-center">
       <div className="digital-clock">
         <div className="time">
           {String(time.hour).padStart(2, "0")} :{" "}
